@@ -16,7 +16,7 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
 wait = WebDriverWait(driver, 10)
 
 
-driver.get("https://www.instagram.com/accounts/login/")
+driver.get("https://www.instagram.com/?flo=true")
 time.sleep(4)
 
 
@@ -35,29 +35,31 @@ followers_text = wait.until(EC.presence_of_element_located(
     (By.XPATH, "//ul/li[2]/a/div/span")
 )).get_attribute("title")  
 
-print("followers_text:", followers_text)
+print("Followers text:", followers_text)
 
 
 def convert_followers(text):
     text = text.lower().replace(",", "")
+
     if "k" in text:
-        return float(text.replace("k", "")) * 1000
+        number = float(text.replace("k", "")) * 1000
     elif "m" in text:
-        return float(text.replace("m", "")) * 1000000
+        number = float(text.replace("m", "")) * 1000000
     else:
-        return float(text)
+        number = float(text)
+    return number
 
 
 followers = convert_followers(followers_text)
-print("followers number:", followers)
+print("Followers number:", followers)
 
 if followers > 100:
     try:
-        follow_button = wait.until(EC.element_to_be_clickable(
-            (By.XPATH, "//button[contains(text(),'Follow')]")
+        follow_btn = wait.until(EC.element_to_be_clickable(
+            (By.XPATH, "(//button[contains(translate(., 'FOLLOW', 'follow'), 'follow')])[1]")
         ))
-        follow_button.click()
-        print("Followed the page!")
+        follow_btn.click()
+        print(" Followed the page!")
 
         try:
             wait.until(EC.text_to_be_present_in_element(
@@ -74,8 +76,6 @@ if followers > 100:
         print("Already following or Follow button not found.")
 else:
     print("Followers are less than 100 — not following.")
-
-
 
 time.sleep(10)
 driver.quit()
