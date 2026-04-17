@@ -3,106 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard Widgets</title>
+  <title>Responsive Search Bar</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="dashboard-page">
-    <section class="dashboard-shell" aria-labelledby="dashboard-title">
-      <header class="dashboard-shell__header">
+  <main class="search-page">
+    <section class="search-shell" aria-labelledby="search-title">
+      <header class="search-shell__header">
         <div>
-          <p class="dashboard-shell__eyebrow">Analytics Overview</p>
-          <h1 id="dashboard-title">Responsive dashboard widget section</h1>
+          <p class="search-shell__eyebrow">Find what matters faster</p>
+          <h1 id="search-title">Responsive search bar section</h1>
         </div>
-        <p class="dashboard-shell__intro">
-          A polished HTML and CSS dashboard with responsive widgets for key stats, recent activity,
-          progress tracking, and quick operational summaries.
+        <p class="search-shell__intro" id="search-description">
+          Search articles, reports, and resources from one polished interface with responsive controls,
+          clear focus states, and theme-aware styling across desktop and mobile screens.
         </p>
       </header>
 
-      <div class="dashboard-grid" aria-label="Dashboard widgets">
-        <article class="widget widget--hero">
-          <div class="widget__header">
-            <p class="widget__label">Revenue Snapshot</p>
-            <span class="widget__badge">+12.4%</span>
-          </div>
-          <strong class="widget__value">$48.2K</strong>
-          <p class="widget__text">
-            Monthly revenue is ahead of target thanks to stronger renewals and improved campaign conversion.
-          </p>
-          <div class="widget__stats">
-            <div>
-              <span>New accounts</span>
-              <strong>184</strong>
-            </div>
-            <div>
-              <span>Avg. order</span>
-              <strong>$1.2K</strong>
-            </div>
-          </div>
-        </article>
+      <form class="search-form" action="#" method="get" role="search" aria-labelledby="search-title" aria-describedby="search-description">
+        <label class="search-form__field search-form__field--input" for="site-search">
+          <span class="search-form__label">Search</span>
+          <input
+            id="site-search"
+            name="q"
+            class="search-form__input"
+            type="search"
+            placeholder="Search articles, reports, and case studies"
+          />
+        </label>
 
-        <article class="widget">
-          <div class="widget__header">
-            <p class="widget__label">Project Progress</p>
-            <strong class="widget__meta">76%</strong>
-          </div>
-          <p class="widget__text">
-            Delivery milestones remain on track with testing, documentation, and rollout preparation in final review.
-          </p>
-          <div class="progress" aria-hidden="true">
-            <span class="progress__fill"></span>
-          </div>
-        </article>
+        <label class="search-form__field search-form__field--select" for="search-category">
+          <span class="search-form__label">Category</span>
+          <select id="search-category" name="category" class="search-form__select">
+            <option value="all">All categories</option>
+            <option value="articles">Articles</option>
+            <option value="reports">Reports</option>
+            <option value="case-studies">Case studies</option>
+            <option value="templates">Templates</option>
+          </select>
+        </label>
 
-        <article class="widget">
-          <div class="widget__header">
-            <p class="widget__label">Active Projects</p>
-            <strong class="widget__meta">8 total</strong>
-          </div>
-          <ul class="widget__list">
-            <li><span>Implementation</span><strong>4</strong></li>
-            <li><span>QA</span><strong>2</strong></li>
-            <li><span>Review</span><strong>2</strong></li>
-          </ul>
-        </article>
+        <button class="search-form__button" type="submit">Search</button>
+      </form>
 
-        <article class="widget">
-          <div class="widget__header">
-            <p class="widget__label">Recent Activity</p>
-            <strong class="widget__meta">Live</strong>
-          </div>
-          <ul class="widget__list">
-            <li><span>Design review approved</span><strong>12m ago</strong></li>
-            <li><span>Release notes updated</span><strong>37m ago</strong></li>
-            <li><span>Client feedback received</span><strong>1h ago</strong></li>
-          </ul>
-        </article>
-
-        <article class="widget widget--summary">
-          <div class="widget__header">
-            <p class="widget__label">Quick Summary</p>
-            <strong class="widget__meta">Today</strong>
-          </div>
-          <div class="summary-grid">
-            <div>
-              <span>Blocked items</span>
-              <strong>2</strong>
-            </div>
-            <div>
-              <span>Tasks done</span>
-              <strong>41</strong>
-            </div>
-            <div>
-              <span>Launches</span>
-              <strong>3</strong>
-            </div>
-            <div>
-              <span>SLA health</span>
-              <strong>98%</strong>
-            </div>
-          </div>
-        </article>
+      <div class="search-meta" aria-label="Popular searches and status">
+        <div class="search-tags">
+          <span class="search-tags__item">Trending: onboarding</span>
+          <span class="search-tags__item">Quarterly planning</span>
+          <span class="search-tags__item">Retention report</span>
+        </div>
+        <p class="search-meta__note">Updated 12 minutes ago · 248 results indexed today</p>
       </div>
     </section>
   </main>

@@ -1,14 +1,14 @@
-# PAP-152 Release Notes
+# PAP-154 Release Notes
 
 ## Deliverables
-- `index.html` — responsive dashboard widget section with five widgets
-- `styles.css` — responsive layout, hover states, and automatic dark/light theme handling
+- `index.html` — responsive search bar section with search input, category dropdown, search button, and supporting metadata row
+- `styles.css` — responsive layout, hover states, focus-visible states, and automatic dark/light theme handling
 
 ## Release readiness
 - No JavaScript dependency
 - Standalone static deliverable
-- Mobile, tablet, and desktop layouts defined in CSS
-- Uses semantic section/article/header structure
+- Desktop, tablet, and mobile layouts defined in CSS
+- Uses semantic structure with labeled form controls and `role="search"`
 
 ## Suggested PR summary
-Add a polished responsive dashboard widget section using HTML and CSS, including revenue, progress, project status, recent activity, and quick summary cards with hover effects and dark-mode-aware styling.
+Add a polished responsive search bar section using HTML and CSS, including a search input, category filter, search button, hover/focus states, and dark-mode-aware styling.
