@@ -3,56 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Search Bar</title>
+  <title>Responsive Dashboard Sidebar</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="search-page">
-    <section class="search-shell" aria-labelledby="search-title">
-      <header class="search-shell__header">
+  <main class="dashboard-layout">
+    <aside class="sidebar" aria-labelledby="sidebar-title">
+      <div class="sidebar__brand">
+        <span class="sidebar__logo" aria-hidden="true">N</span>
         <div>
-          <p class="search-shell__eyebrow">Find what matters faster</p>
-          <h1 id="search-title">Responsive search bar section</h1>
+          <p class="sidebar__eyebrow">Workspace</p>
+          <h1 id="sidebar-title" class="sidebar__title">Northstar</h1>
         </div>
-        <p class="search-shell__intro" id="search-description">
-          Search articles, reports, and resources from one polished interface with responsive controls,
-          clear focus states, and theme-aware styling across desktop and mobile screens.
-        </p>
-      </header>
+      </div>
 
-      <form class="search-form" action="#" method="get" role="search" aria-labelledby="search-title" aria-describedby="search-description">
-        <label class="search-form__field search-form__field--input" for="site-search">
-          <span class="search-form__label">Search</span>
-          <input
-            id="site-search"
-            name="q"
-            class="search-form__input"
-            type="search"
-            placeholder="Search articles, reports, and case studies"
-          />
-        </label>
+      <section class="sidebar__section" aria-labelledby="main-menu-title">
+        <h2 id="main-menu-title" class="sidebar__heading">Main menu</h2>
+        <nav class="sidebar__nav" aria-label="Main menu">
+          <a class="sidebar__link sidebar__link--active" href="#" aria-current="page">
+            <span class="sidebar__icon" aria-hidden="true">🏠</span>
+            <span>Dashboard</span>
+          </a>
+          <a class="sidebar__link" href="#">
+            <span class="sidebar__icon" aria-hidden="true">📊</span>
+            <span>Analytics</span>
+          </a>
+          <a class="sidebar__link" href="#">
+            <span class="sidebar__icon" aria-hidden="true">📁</span>
+            <span>Projects</span>
+          </a>
+          <a class="sidebar__link" href="#">
+            <span class="sidebar__icon" aria-hidden="true">💬</span>
+            <span>Messages</span>
+          </a>
+        </nav>
+      </section>
 
-        <label class="search-form__field search-form__field--select" for="search-category">
-          <span class="search-form__label">Category</span>
-          <select id="search-category" name="category" class="search-form__select">
-            <option value="all">All categories</option>
-            <option value="articles">Articles</option>
-            <option value="reports">Reports</option>
-            <option value="case-studies">Case studies</option>
-            <option value="templates">Templates</option>
-          </select>
-        </label>
+      <section class="sidebar__section" aria-labelledby="workspace-tools-title">
+        <h2 id="workspace-tools-title" class="sidebar__heading">Workspace</h2>
+        <nav class="sidebar__nav" aria-label="Workspace tools">
+          <a class="sidebar__link" href="#">
+            <span class="sidebar__icon" aria-hidden="true">🗂️</span>
+            <span>Documents</span>
+          </a>
+          <a class="sidebar__link" href="#">
+            <span class="sidebar__icon" aria-hidden="true">👥</span>
+            <span>Team</span>
+          </a>
+          <a class="sidebar__link" href="#">
+            <span class="sidebar__icon" aria-hidden="true">⚙️</span>
+            <span>Settings</span>
+          </a>
+        </nav>
+      </section>
 
-        <button class="search-form__button" type="submit">Search</button>
-      </form>
-
-      <div class="search-meta" aria-label="Popular searches and status">
-        <div class="search-tags">
-          <span class="search-tags__item">Trending: onboarding</span>
-          <span class="search-tags__item">Quarterly planning</span>
-          <span class="search-tags__item">Retention report</span>
+      <div class="sidebar__profile">
+        <span class="sidebar__avatar" aria-hidden="true">AL</span>
+        <div>
+          <strong>Alex Lee</strong>
+          <p>Product lead</p>
         </div>
-        <p class="search-meta__note">Updated 12 minutes ago · 248 results indexed today</p>
+      </div>
+    </aside>
+
+    <section class="dashboard-content" aria-labelledby="content-title">
+      <p class="dashboard-content__eyebrow">Overview</p>
+      <h2 id="content-title">Sidebar layout preview</h2>
+      <p class="dashboard-content__intro">
+        A polished responsive dashboard shell with a clear left navigation, active state, section headings,
+        and balanced spacing across desktop and mobile screens.
+      </p>
+
+      <div class="dashboard-content__grid">
+        <article class="dashboard-card">
+          <p class="dashboard-card__label">Open tasks</p>
+          <strong class="dashboard-card__value">14</strong>
+          <p class="dashboard-card__text">High-priority items are grouped for quick review from the active dashboard view.</p>
+        </article>
+        <article class="dashboard-card">
+          <p class="dashboard-card__label">Upcoming reviews</p>
+          <strong class="dashboard-card__value">5</strong>
+          <p class="dashboard-card__text">Navigation keeps project, team, and analytics routes within one consistent sidebar.</p>
+        </article>
+        <article class="dashboard-card dashboard-card--wide">
+          <p class="dashboard-card__label">Team status</p>
+          <strong class="dashboard-card__value">92% on track</strong>
+          <p class="dashboard-card__text">The sidebar becomes a top-panel layout on smaller screens without requiring JavaScript.</p>
+        </article>
       </div>
     </section>
   </main>
