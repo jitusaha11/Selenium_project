@@ -57,6 +57,7 @@ a {
   min-height: 100vh;
   display: grid;
   grid-template-columns: minmax(250px, 290px) minmax(0, 1fr);
+  align-items: start;
   gap: 22px;
   padding: 28px;
 }
@@ -67,6 +68,7 @@ a {
   border: 1px solid var(--border);
   background: var(--surface);
   box-shadow: 0 24px 64px var(--shadow);
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
 
@@ -76,6 +78,10 @@ a {
   align-content: start;
   padding: 24px;
   border-radius: 28px;
+  position: sticky;
+  top: 28px;
+  max-height: calc(100vh - 56px);
+  overflow: auto;
 }
 
 .sidebar__brand {
@@ -123,6 +129,11 @@ a {
   gap: 12px;
 }
 
+.sidebar__section + .sidebar__section {
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
 .sidebar__heading {
   margin: 0;
   color: var(--muted);
@@ -144,7 +155,10 @@ a {
   border-radius: 18px;
   background: var(--surface-soft);
   border: 1px solid transparent;
-  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
 }
 
 .sidebar__link:hover,
@@ -156,19 +170,37 @@ a {
 }
 
 .sidebar__link:focus-visible {
-  box-shadow: 0 0 0 4px var(--focus-ring);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.18), 0 0 0 4px var(--focus-ring);
 }
 
 .sidebar__link--active,
 .sidebar__link[aria-current="page"] {
+  color: var(--text);
   border-color: var(--border-strong);
   background: linear-gradient(135deg, rgba(125, 211, 252, 0.22), rgba(34, 197, 94, 0.16));
+}
+
+.sidebar__link--active::before,
+.sidebar__link[aria-current="page"]::before {
+  content: "";
+  position: absolute;
+  inset: 10px auto 10px 0;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+}
+
+.sidebar__link--active .sidebar__icon,
+.sidebar__link[aria-current="page"] .sidebar__icon {
+  background: rgba(125, 211, 252, 0.18);
+  border: 1px solid rgba(125, 211, 252, 0.22);
 }
 
 .sidebar__icon {
   width: 36px;
   height: 36px;
   border-radius: 12px;
+  flex-shrink: 0;
   background: rgba(255, 255, 255, 0.08);
   font-size: 1rem;
 }
@@ -177,6 +209,7 @@ a {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-top: auto;
   padding: 16px;
   border-radius: 20px;
   background: var(--surface-soft);
@@ -236,6 +269,10 @@ a {
   }
 
   .sidebar {
+    position: static;
+    top: auto;
+    max-height: none;
+    overflow: visible;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
   }
