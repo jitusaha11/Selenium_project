@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Dashboard Sidebar</title>
+  <title>Responsive Progress Stepper</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -67,30 +67,53 @@
     </aside>
 
     <section class="dashboard-content" aria-labelledby="content-title">
-      <p class="dashboard-content__eyebrow">Overview</p>
-      <h2 id="content-title">Sidebar layout preview</h2>
-      <p class="dashboard-content__intro">
-        A polished responsive dashboard shell with a clear left navigation, active state, section headings,
-        and balanced spacing across desktop and mobile screens.
-      </p>
+      <header class="progress-section__header">
+        <p class="dashboard-content__eyebrow">Progress</p>
+        <h2 id="content-title">Project launch steps</h2>
+        <p class="dashboard-content__intro">
+          Follow the onboarding flow below to move from account setup to a fully launched project with clear progress states.
+        </p>
+      </header>
 
-      <div class="dashboard-content__grid">
-        <article class="dashboard-card">
-          <p class="dashboard-card__label">Open tasks</p>
-          <strong class="dashboard-card__value">14</strong>
-          <p class="dashboard-card__text">High-priority items are grouped for quick review from the active dashboard view.</p>
-        </article>
-        <article class="dashboard-card">
-          <p class="dashboard-card__label">Upcoming reviews</p>
-          <strong class="dashboard-card__value">5</strong>
-          <p class="dashboard-card__text">Navigation keeps project, team, and analytics routes within one consistent sidebar.</p>
-        </article>
-        <article class="dashboard-card dashboard-card--wide">
-          <p class="dashboard-card__label">Team status</p>
-          <strong class="dashboard-card__value">92% on track</strong>
-          <p class="dashboard-card__text">The sidebar becomes a top-panel layout on smaller screens without requiring JavaScript.</p>
-        </article>
-      </div>
+      <section class="progress-section" aria-label="Project launch progress">
+        <ol class="stepper">
+          <li class="stepper__item stepper__item--complete">
+            <span class="stepper__indicator" aria-hidden="true">✓</span>
+            <div class="stepper__content">
+              <p class="stepper__eyebrow">Completed</p>
+              <h3 class="stepper__title">Sign Up</h3>
+              <p class="stepper__text">Create your workspace account and unlock the onboarding flow.</p>
+            </div>
+          </li>
+
+          <li class="stepper__item stepper__item--complete">
+            <span class="stepper__indicator" aria-hidden="true">✓</span>
+            <div class="stepper__content">
+              <p class="stepper__eyebrow">Completed</p>
+              <h3 class="stepper__title">Verify Email</h3>
+              <p class="stepper__text">Confirm your email address to secure access and enable notifications.</p>
+            </div>
+          </li>
+
+          <li class="stepper__item stepper__item--active">
+            <span class="stepper__indicator" aria-hidden="true">3</span>
+            <div class="stepper__content">
+              <p class="stepper__eyebrow">Current step</p>
+              <h3 class="stepper__title">Complete Profile</h3>
+              <p class="stepper__text">Add your workspace details so collaborators know who you are and what you are launching.</p>
+            </div>
+          </li>
+
+          <li class="stepper__item">
+            <span class="stepper__indicator" aria-hidden="true">4</span>
+            <div class="stepper__content">
+              <p class="stepper__eyebrow">Upcoming</p>
+              <h3 class="stepper__title">Launch Project</h3>
+              <p class="stepper__text">Publish your setup and invite the team into a ready-to-use project space.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
     </section>
   </main>
 </body>

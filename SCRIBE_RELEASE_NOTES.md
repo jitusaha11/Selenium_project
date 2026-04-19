@@ -1,14 +1,15 @@
-# PAP-155 Release Notes
+# PAP-165 Release Notes
 
 ## Deliverables
-- `index.html` — responsive dashboard layout with a left sidebar, menu items, inline icons, section headings, and one active navigation link
-- `styles.css` — responsive sidebar/dashboard styling with hover states, focus-visible states, and automatic dark/light theme handling
+- `index.html` — responsive progress stepper page with a persistent sidebar and a four-step launch flow
+- `styles.css` — responsive stepper styling with completed/active/upcoming step states, connector lines, hover effects, and dark/light theme support
 
 ## Release readiness
 - No JavaScript dependency
 - Standalone static deliverable
 - Desktop, tablet, and mobile layouts defined in CSS
-- Uses semantic headings and `aria-current="page"` for the active navigation item
+- Includes steps for Sign Up, Verify Email, Complete Profile, and Launch Project
+- Existing `prefers-color-scheme` support is preserved for dark/light styling
 
 ## Suggested PR summary
-Add a polished responsive dashboard sidebar using HTML and CSS, including grouped menu links, icons, section headings, an active state, and dark-mode-aware responsive styling.
+Add a polished responsive progress stepper using HTML and CSS, including completed and active step states, connector styling, subtle hover effects, and dark-mode-aware responsive behavior.
