@@ -1,14 +1,15 @@
-# PAP-155 Release Notes
+# PAP-164 Release Notes
 
 ## Deliverables
-- `index.html` — responsive dashboard layout with a left sidebar, menu items, inline icons, section headings, and one active navigation link
-- `styles.css` — responsive sidebar/dashboard styling with hover states, focus-visible states, and automatic dark/light theme handling
+- `index.html` — responsive feature highlights page with a persistent sidebar and multiple polished feature cards
+- `styles.css` — responsive feature highlight styling with card hover effects, dark/light theme support, and desktop/tablet/mobile grid behavior
 
 ## Release readiness
 - No JavaScript dependency
 - Standalone static deliverable
 - Desktop, tablet, and mobile layouts defined in CSS
-- Uses semantic headings and `aria-current="page"` for the active navigation item
+- Multiple highlight blocks each include an icon, title, and short description
+- Existing `prefers-color-scheme` support is preserved for dark/light styling
 
 ## Suggested PR summary
-Add a polished responsive dashboard sidebar using HTML and CSS, including grouped menu links, icons, section headings, an active state, and dark-mode-aware responsive styling.
+Add a polished responsive feature highlights section using HTML and CSS, including multiple icon-led highlight cards, responsive grid behavior, hover effects, and dark-mode-aware styling.
