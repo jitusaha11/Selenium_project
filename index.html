@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Dashboard Sidebar</title>
+  <title>Responsive Feature Highlights</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -67,30 +67,53 @@
     </aside>
 
     <section class="dashboard-content" aria-labelledby="content-title">
-      <p class="dashboard-content__eyebrow">Overview</p>
-      <h2 id="content-title">Sidebar layout preview</h2>
-      <p class="dashboard-content__intro">
-        A polished responsive dashboard shell with a clear left navigation, active state, section headings,
-        and balanced spacing across desktop and mobile screens.
-      </p>
+      <header class="feature-highlights__header">
+        <p class="dashboard-content__eyebrow">Highlights</p>
+        <h2 id="content-title">Feature highlights</h2>
+        <p class="dashboard-content__intro">
+          Discover the core product benefits that help teams launch faster, collaborate better, and stay productive on every device.
+        </p>
+      </header>
 
-      <div class="dashboard-content__grid">
-        <article class="dashboard-card">
-          <p class="dashboard-card__label">Open tasks</p>
-          <strong class="dashboard-card__value">14</strong>
-          <p class="dashboard-card__text">High-priority items are grouped for quick review from the active dashboard view.</p>
-        </article>
-        <article class="dashboard-card">
-          <p class="dashboard-card__label">Upcoming reviews</p>
-          <strong class="dashboard-card__value">5</strong>
-          <p class="dashboard-card__text">Navigation keeps project, team, and analytics routes within one consistent sidebar.</p>
-        </article>
-        <article class="dashboard-card dashboard-card--wide">
-          <p class="dashboard-card__label">Team status</p>
-          <strong class="dashboard-card__value">92% on track</strong>
-          <p class="dashboard-card__text">The sidebar becomes a top-panel layout on smaller screens without requiring JavaScript.</p>
-        </article>
-      </div>
+      <section class="feature-highlights" aria-label="Feature highlights section">
+        <div class="feature-highlights__grid">
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">⚡</span>
+            <h3 class="feature-card__title">Fast setup</h3>
+            <p class="feature-card__text">Get started with a streamlined interface that helps new workspaces feel polished from day one.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">🤝</span>
+            <h3 class="feature-card__title">Shared collaboration</h3>
+            <p class="feature-card__text">Keep teammates aligned with organized spaces, shared visibility, and simple collaboration patterns.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">📈</span>
+            <h3 class="feature-card__title">Actionable insights</h3>
+            <p class="feature-card__text">Surface meaningful trends quickly with a clear, readable layout built for fast decision-making.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">🔒</span>
+            <h3 class="feature-card__title">Secure workflows</h3>
+            <p class="feature-card__text">Support confident operations through a trustworthy experience that keeps key actions easy to review.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">🔗</span>
+            <h3 class="feature-card__title">Flexible integrations</h3>
+            <p class="feature-card__text">Connect the services your team already uses while keeping the interface visually consistent.</p>
+          </article>
+
+          <article class="feature-card">
+            <span class="feature-card__icon" aria-hidden="true">📱</span>
+            <h3 class="feature-card__title">Mobile ready</h3>
+            <p class="feature-card__text">Move from desktop to tablet to phone with a responsive card layout that stays easy to scan.</p>
+          </article>
+        </div>
+      </section>
     </section>
   </main>
 </body>
