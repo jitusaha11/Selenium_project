@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Responsive Dashboard Sidebar</title>
+  <title>Responsive Profile Settings</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -20,7 +20,7 @@
       <section class="sidebar__section" aria-labelledby="main-menu-title">
         <h2 id="main-menu-title" class="sidebar__heading">Main menu</h2>
         <nav class="sidebar__nav" aria-label="Main menu">
-          <a class="sidebar__link sidebar__link--active" href="#" aria-current="page">
+          <a class="sidebar__link" href="#">
             <span class="sidebar__icon" aria-hidden="true">🏠</span>
             <span>Dashboard</span>
           </a>
@@ -50,7 +50,7 @@
             <span class="sidebar__icon" aria-hidden="true">👥</span>
             <span>Team</span>
           </a>
-          <a class="sidebar__link" href="#">
+          <a class="sidebar__link sidebar__link--active" href="#" aria-current="page">
             <span class="sidebar__icon" aria-hidden="true">⚙️</span>
             <span>Settings</span>
           </a>
@@ -67,30 +67,118 @@
     </aside>
 
     <section class="dashboard-content" aria-labelledby="content-title">
-      <p class="dashboard-content__eyebrow">Overview</p>
-      <h2 id="content-title">Sidebar layout preview</h2>
-      <p class="dashboard-content__intro">
-        A polished responsive dashboard shell with a clear left navigation, active state, section headings,
-        and balanced spacing across desktop and mobile screens.
-      </p>
+      <header class="profile-settings__header">
+        <p class="dashboard-content__eyebrow">Settings</p>
+        <h2 id="content-title">Profile settings</h2>
+        <p class="dashboard-content__intro">
+          Manage your profile details, preferences, and account security from one polished responsive settings screen.
+        </p>
+      </header>
 
-      <div class="dashboard-content__grid">
-        <article class="dashboard-card">
-          <p class="dashboard-card__label">Open tasks</p>
-          <strong class="dashboard-card__value">14</strong>
-          <p class="dashboard-card__text">High-priority items are grouped for quick review from the active dashboard view.</p>
+      <section class="profile-settings" aria-label="Profile settings overview">
+        <article class="profile-summary">
+          <div class="profile-summary__identity">
+            <span class="profile-summary__avatar" aria-hidden="true">AL</span>
+            <div>
+              <p class="dashboard-card__label">Account profile</p>
+              <h3 class="profile-summary__name">Alex Lee</h3>
+              <p class="profile-summary__meta">Product lead · Northstar workspace</p>
+            </div>
+          </div>
+
+          <div class="profile-summary__stats" aria-label="Account details">
+            <div class="profile-summary__stat">
+              <span class="profile-summary__stat-label">Status</span>
+              <strong>Active</strong>
+            </div>
+            <div class="profile-summary__stat">
+              <span class="profile-summary__stat-label">Plan</span>
+              <strong>Pro</strong>
+            </div>
+            <div class="profile-summary__stat">
+              <span class="profile-summary__stat-label">Last update</span>
+              <strong>Today</strong>
+            </div>
+          </div>
         </article>
-        <article class="dashboard-card">
-          <p class="dashboard-card__label">Upcoming reviews</p>
-          <strong class="dashboard-card__value">5</strong>
-          <p class="dashboard-card__text">Navigation keeps project, team, and analytics routes within one consistent sidebar.</p>
-        </article>
-        <article class="dashboard-card dashboard-card--wide">
-          <p class="dashboard-card__label">Team status</p>
-          <strong class="dashboard-card__value">92% on track</strong>
-          <p class="dashboard-card__text">The sidebar becomes a top-panel layout on smaller screens without requiring JavaScript.</p>
-        </article>
-      </div>
+
+        <form class="profile-form" action="#" method="post">
+          <section class="settings-group" aria-labelledby="personal-info-title">
+            <div class="settings-group__header">
+              <p class="dashboard-card__label">Profile details</p>
+              <h3 id="personal-info-title" class="settings-group__title">Personal information</h3>
+            </div>
+
+            <div class="settings-group__grid">
+              <div class="form-field">
+                <label for="full-name">Full name</label>
+                <input id="full-name" name="full-name" type="text" value="Alex Lee" autocomplete="name" />
+              </div>
+              <div class="form-field">
+                <label for="display-name">Display name</label>
+                <input id="display-name" name="display-name" type="text" value="Alex" autocomplete="nickname" />
+              </div>
+              <div class="form-field">
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" value="alex.lee@northstar.io" autocomplete="email" />
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone number</label>
+                <input id="phone" name="phone" type="tel" value="+1 (415) 555-0132" autocomplete="tel" />
+              </div>
+            </div>
+          </section>
+
+          <section class="settings-group" aria-labelledby="preferences-title">
+            <div class="settings-group__header">
+              <p class="dashboard-card__label">Experience</p>
+              <h3 id="preferences-title" class="settings-group__title">Preferences</h3>
+            </div>
+
+            <div class="settings-group__grid">
+              <div class="form-field">
+                <label for="timezone">Time zone</label>
+                <input id="timezone" name="timezone" type="text" value="UTC-08:00 Pacific Time" />
+              </div>
+              <div class="form-field">
+                <label for="language">Language</label>
+                <input id="language" name="language" type="text" value="English (US)" />
+              </div>
+              <div class="form-field form-field--wide">
+                <label for="bio">Bio</label>
+                <textarea id="bio" name="bio" rows="4">Leading product strategy, design systems, and cross-functional delivery across the Northstar workspace.</textarea>
+              </div>
+            </div>
+          </section>
+
+          <section class="settings-group" aria-labelledby="security-title">
+            <div class="settings-group__header">
+              <p class="dashboard-card__label">Account safety</p>
+              <h3 id="security-title" class="settings-group__title">Security</h3>
+            </div>
+
+            <div class="settings-group__grid">
+              <div class="form-field">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Enter a new password" autocomplete="new-password" />
+              </div>
+              <div class="form-field">
+                <label for="recovery-email">Recovery email</label>
+                <input id="recovery-email" name="recovery-email" type="email" value="security@northstar.io" autocomplete="email" />
+              </div>
+              <div class="form-field form-field--wide">
+                <label for="two-factor">Two-factor authentication</label>
+                <input id="two-factor" name="two-factor" type="text" value="Enabled · Authenticator app" readonly aria-readonly="true" />
+              </div>
+            </div>
+          </section>
+
+          <div class="profile-form__actions">
+            <button class="button-primary" type="submit">Save changes</button>
+            <p class="profile-form__note">Updated for clear focus states, hover feedback, and consistent light and dark mode styling.</p>
+          </div>
+        </form>
+      </section>
     </section>
   </main>
 </body>
