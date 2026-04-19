@@ -230,6 +230,95 @@ a {
   grid-column: 1 / -1;
 }
 
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.comparison-card {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  box-shadow: 0 24px 64px var(--shadow);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.comparison-card:hover,
+.comparison-card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: 0 28px 72px rgba(15, 23, 42, 0.24);
+}
+
+.comparison-card--featured {
+  border-color: var(--border-strong);
+  background:
+    linear-gradient(180deg, rgba(125, 211, 252, 0.14), transparent 32%),
+    var(--surface-strong);
+}
+
+.comparison-card__eyebrow {
+  margin: 0;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.comparison-card__title {
+  margin: 0;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.comparison-card__description {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.comparison-card__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.comparison-card__list li {
+  position: relative;
+  padding-left: 1.4rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.comparison-card__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.52rem;
+  width: 0.56rem;
+  height: 0.56rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.12);
+}
+
+.comparison-card__list li + li {
+  padding-top: 2px;
+}
+
+@media (prefers-color-scheme: light) {
+  .comparison-card:hover,
+  .comparison-card:focus-within {
+    box-shadow: 0 24px 48px rgba(148, 163, 184, 0.28);
+  }
+}
+
 @media (max-width: 900px) {
   .dashboard-layout {
     grid-template-columns: 1fr;
@@ -242,6 +331,14 @@ a {
 
   .sidebar__brand,
   .sidebar__profile {
+    grid-column: 1 / -1;
+  }
+
+  .comparison-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .comparison-card--featured {
     grid-column: 1 / -1;
   }
 }
@@ -261,8 +358,14 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .dashboard-content__grid {
+  .comparison-grid {
     grid-template-columns: 1fr;
+  }
+
+  .comparison-card,
+  .comparison-card--featured {
+    grid-column: auto;
+    padding: 20px;
   }
 
   .sidebar__link {

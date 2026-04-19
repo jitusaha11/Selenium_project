@@ -67,28 +67,50 @@
     </aside>
 
     <section class="dashboard-content" aria-labelledby="content-title">
-      <p class="dashboard-content__eyebrow">Overview</p>
-      <h2 id="content-title">Sidebar layout preview</h2>
+      <p class="dashboard-content__eyebrow">Compare</p>
+      <h2 id="content-title">Choose the right plan</h2>
       <p class="dashboard-content__intro">
-        A polished responsive dashboard shell with a clear left navigation, active state, section headings,
-        and balanced spacing across desktop and mobile screens.
+        Compare the essentials, collaboration tools, and support options across plans in a polished responsive layout.
       </p>
 
-      <div class="dashboard-content__grid">
-        <article class="dashboard-card">
-          <p class="dashboard-card__label">Open tasks</p>
-          <strong class="dashboard-card__value">14</strong>
-          <p class="dashboard-card__text">High-priority items are grouped for quick review from the active dashboard view.</p>
+      <div class="comparison-grid">
+        <article class="comparison-card" aria-labelledby="starter-title">
+          <p class="comparison-card__eyebrow">For individuals</p>
+          <h3 id="starter-title" class="comparison-card__title">Starter</h3>
+          <p class="comparison-card__description">
+            A simple setup for solo work, lightweight planning, and everyday tracking.
+          </p>
+          <ul class="comparison-card__list">
+            <li>Up to 3 active projects</li>
+            <li>Shared task boards</li>
+            <li>Email support during business hours</li>
+          </ul>
         </article>
-        <article class="dashboard-card">
-          <p class="dashboard-card__label">Upcoming reviews</p>
-          <strong class="dashboard-card__value">5</strong>
-          <p class="dashboard-card__text">Navigation keeps project, team, and analytics routes within one consistent sidebar.</p>
+
+        <article class="comparison-card comparison-card--featured" aria-labelledby="pro-title">
+          <p class="comparison-card__eyebrow">Most popular</p>
+          <h3 id="pro-title" class="comparison-card__title">Pro</h3>
+          <p class="comparison-card__description">
+            Built for growing teams that need deeper visibility, automation, and collaboration.
+          </p>
+          <ul class="comparison-card__list">
+            <li>Unlimited projects and dashboards</li>
+            <li>Advanced analytics and automations</li>
+            <li>Priority chat and email support</li>
+          </ul>
         </article>
-        <article class="dashboard-card dashboard-card--wide">
-          <p class="dashboard-card__label">Team status</p>
-          <strong class="dashboard-card__value">92% on track</strong>
-          <p class="dashboard-card__text">The sidebar becomes a top-panel layout on smaller screens without requiring JavaScript.</p>
+
+        <article class="comparison-card" aria-labelledby="enterprise-title">
+          <p class="comparison-card__eyebrow">For large teams</p>
+          <h3 id="enterprise-title" class="comparison-card__title">Enterprise</h3>
+          <p class="comparison-card__description">
+            Flexible controls and dedicated guidance for organizations with complex workflows.
+          </p>
+          <ul class="comparison-card__list">
+            <li>Custom roles, SSO, and governance</li>
+            <li>Dedicated onboarding and success manager</li>
+            <li>24/7 premium support response</li>
+          </ul>
         </article>
       </div>
     </section>
